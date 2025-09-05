@@ -1,0 +1,66 @@
+@media (prefers-color-scheme: light) {
+  :root {
+    --primary-text-color: rgb(68,68,68);
+    --secondary-text-color: rgba(41, 63, 7, 0.4);
+    --details-color: rgb(68,68,68);
+    --details-focus-color: rgb(49, 49, 49);
+    --details-active-color: rgba(77, 126, 3, 0.4);
+    --primary-floor-color: rgb(193, 207, 161);
+    --secondary-floor-color: rgb(255, 255, 255);
+    --ternary-floor-color: rgb(250, 255, 222);
+    --secondary-background-color: rgba(46, 80, 14, 0.1);
+    --cup-of-tea: url('./assets/cup-of-tea.png');
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-text-color: rgb(42, 44, 33);
+    --secondary-text-color: rgba(186, 202, 161, 0.4);
+    --details-color: rgb(19, 20, 17);
+    --details-focus-color: rgb(46, 49, 40);
+    --details-active-color: rgba(77, 126, 3, 0.4);
+    --primary-floor-color: rgb(73, 85, 43);
+    --secondary-floor-color: rgb(93, 97, 89);
+    --ternary-floor-color: rgb(250, 255, 222);
+    --secondary-background-color: rgba(29, 54, 6, 0.1);
+    --cup-of-tea: url('./assets/dark-cup-of-tea.png');
+  }
+}
+
+:root {
+  font-family: 'Courier New', Courier, monospace;
+
+  color-scheme: light dark;
+  background-color: var(--secondary-floor-color);
+  color:var(--primary-text-color);
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --small-padding: 3px;
+  --medium-padding: 10px;
+  --big-padding: 2em;
+  --cup-size-big: 160px;
+  --cup-size-medium: 100px;
+  --cup-size-small: 80px;
+
+  --center-block-width: 500px;
+
+  --border-size: 4px;
+
+  --small-margin:2px;
+  --medium-margin:6px;
+  --big-margin:10px;
+
+  --font-size: 16px;
+  --border-color: var(--border-size) solid var(--details-color);
+  --border-focus-color: var(--border-size) solid var(--details-focus-color);
+  --border-active-color: var(--border-size) solid var(--details-active-color);
+  --border-secondary-color: var(--border-size) solid var(--secondary-text-color);
+}
+
+body {
+  margin:0;
+  overflow-y: hidden;
+}

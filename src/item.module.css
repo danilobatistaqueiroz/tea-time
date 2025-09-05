@@ -1,0 +1,57 @@
+@import url("base-theme.css");
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.row:not(:last-child) {
+  margin-bottom: var(--font-size);
+}
+
+.description {
+  width: 100%;
+  padding: var(--small-padding);
+  margin-right:6px;
+  border: var(--border-color);
+  background-color: var(--secondary-floor-color);
+  color:var(--primary-text-color);
+  font-size: var(--font-size);
+  letter-spacing:1px;
+}
+.description:focus {
+  outline:0;
+  border: var(--border-focus-color);
+}
+
+.button {
+  vertical-align: text-top;
+  appearance: none;
+  background: none;
+  padding-left: var(--medium-padding);
+  padding-right: var(--medium-padding);
+  padding-top:var(--small-padding);
+  padding-bottom:var(--small-padding);
+  outline: none;
+  border: var(--border-secondary-color);
+  cursor: pointer;
+  background-color: var(--secondary-background-color);
+  border-radius: 2px;
+  transition: all 0.15s;
+  font-size: var(--font-size);
+  font-weight: bold;
+  color: var(--secondary-text-color);
+}
+
+.button:hover, .button:focus {
+  border: var(--border-secondary-color);
+  box-shadow: 2px 2px 5px rgba(102, 102, 102, 0.3);
+  outline: none;
+}
+
+.button:active {
+  border: var(--border-active-color);
+  outline: none;
+}
