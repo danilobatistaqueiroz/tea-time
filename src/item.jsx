@@ -8,22 +8,30 @@ export function Item() {
   const dispatch = useDispatch();
   const [inputValue, setInputValue] = useState('');
 
+  function addClick() {
+    let time = new Date();
+    let formatedTime = time.toLocaleTimeString("en-US", {
+      hour: "2-digit",
+      minute: "2-digit",
+      hourCycle: 'h23'
+    });
+    dispatch(add([formatedTime,inputValue]));
+    setInputValue('');
+  }
+
+  function descriptionEnter(e){
+    if(e.code=='Enter'){
+      addClick();
+    }
+  }
+
   return (
     <div className={styles.row}>
-      <input type="text" className={styles.description} value={inputValue} onChange={e => setInputValue(e.target.value)} />
+      <input type="text" className={styles.description} value={inputValue} onChange={e => setInputValue(e.target.value)} onKeyDown={descriptionEnter}/>
       <button
         className={styles.button}
         aria-label="add"
-        onClick={() => {
-          let time = new Date();
-            let formatedTime = time.toLocaleTimeString("en-US", {
-              hour: "2-digit",
-              minute: "2-digit",
-              hourCycle: 'h23'
-            });
-            dispatch(add([formatedTime,inputValue]))
-          }
-        }
+        onClick={addClick}
       >
         Add
       </button>

@@ -5,15 +5,21 @@
   flex-direction: column;
   justify-content: center; /* Centers horizontally */
   align-items: center;    /* Centers vertically */
-  min-height: 99vh;
-  margin: 0;
+  min-height:'100vh';
+  max-height:'100vh';
+  overflow:hidden;
 }
 .center-block {
-  flex:1;
   display: flex;
+  flex-shrink:0;
+  flex-grow:0;
+  flex-basis:0%;
   flex-direction: column; 
+  overflow:hidden;
   align-items: center;    /* Centers horizontally */
   justify-content:flex-start; /* Align items on top */
+  min-height:'98vh';
+  max-height:'98vh';
   width: var(--center-block-width);
   padding-top:10px;
   background-color: var(--primary-floor-color);
@@ -63,9 +69,6 @@
     max-width: var(--cup-size-medium);
     max-height: var(--cup-size-medium);
   }
-  .item {
-    padding-top: var(--small-padding) !important;
-  }
 }
 @media (min-height: 801px) {
   .logo {
@@ -74,7 +77,6 @@
   }
 }
 .item {
-  padding-top: var(--big-padding);
   padding-bottom: var(--big-padding);
   width: calc(100% + calc(var(--border-size)) );
 }
@@ -82,16 +84,17 @@
   content:var(--cup-of-tea);
 }
 .list {
-  flex:auto;
+  flex-grow:1;
+  height:'400px';
+  overflow-y:auto;
   width: calc(100% - calc(var(--border-size) * 2) );
-  min-height: 10vh;
-  overflow-y: scroll;
   border: var(--border-color);
   background-color: var(--secondary-floor-color);
   padding: var(--small-padding);
 }
 .list div {
   display: table;
+  width:100%;
 }
 .list div p {
   display: table-row;

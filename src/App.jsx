@@ -10,7 +10,7 @@ function App() {
 
   return (
     <div className="main-block">
-      <div className="center-block">
+      <div className="center-block" style={{minHeight:'98vh',maxHeight:'98vh'}}>
         <a href="https://vite.dev" target="_blank">
           <img className="logo" alt="tea logo" />
         </a>
