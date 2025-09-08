@@ -1,4 +1,4 @@
-import { configureStore } from '@reduxjs/toolkit'
+import { configureStore, combineReducers } from '@reduxjs/toolkit'
 import itemReducer from './item-slice'
 
 import { persistStore, persistReducer } from 'redux-persist';
@@ -8,13 +8,18 @@ const persistConfig = {
   key: 'root', // Key for your persisted state in local storage
   storage, // The storage engine to use (localStorage in this case)
   // whitelist: ['someSlice'], // Optional: only persist specific parts of your state
-  // blacklist: ['anotherSlice'], // Optional: don't persist specific parts
+  //blacklist: ['edition','editionSlice','edition-slice'], // Optional: don't persist specific parts
 };
 
-const persistedReducer = persistReducer(persistConfig, itemReducer);
+const allReducers = combineReducers({
+  items: itemReducer
+});
+
+const persistedReducers = persistReducer(persistConfig, allReducers);
+
 
 const store = configureStore({
-  reducer: persistedReducer,
+  reducer: persistedReducers,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: false,

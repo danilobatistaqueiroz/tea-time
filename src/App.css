@@ -1,5 +1,10 @@
 @import url("base-theme.css");
 
+:root {
+  --hour-width: 60px;
+  --btn-width: 18.2969px;
+}
+
 .main-block {
   display: flex;
   flex-direction: column;
@@ -8,6 +13,7 @@
   min-height:'100vh';
   max-height:'100vh';
   overflow:hidden;
+  margin-top:1vh;
 }
 .center-block {
   display: flex;
@@ -18,10 +24,9 @@
   overflow:hidden;
   align-items: center;    /* Centers horizontally */
   justify-content:flex-start; /* Align items on top */
-  min-height:'98vh';
-  max-height:'98vh';
+  min-height:'99vh';
+  max-height:'99vh';
   width: var(--center-block-width);
-  padding-top:10px;
   background-color: var(--primary-floor-color);
   border: var(--border-color);
   padding-left: var(--big-padding);
@@ -78,16 +83,15 @@
 }
 .item {
   padding-bottom: var(--big-padding);
-  width: calc(100% + calc(var(--border-size)) );
+  width: 100%;
 }
 .logo {
   content:var(--cup-of-tea);
 }
 .list {
   flex-grow:1;
-  height:'400px';
   overflow-y:auto;
-  width: calc(100% - calc(var(--border-size) * 2) );
+  width: 100%;
   border: var(--border-color);
   background-color: var(--secondary-floor-color);
   padding: var(--small-padding);
@@ -110,11 +114,34 @@
 }
 .hour {
   border-right: var(--border-color); 
-  width:60px;
+  width: var(--hour-width);
   padding-right:20px;
   padding-left:20px;
 }
 .description {
   padding-left:20px;
-  width:100%;
+  width:266px;
+}
+.column-hidden {
+  padding: 0px 10px;
+  height: 16px;
+}
+
+.btn {
+  border: none;
+  color: rgba(10,10,10,0.5);
+  padding: 4px 4px;
+  font-size: 12px;
+  cursor: pointer;
+  width: var(--btn-width);
+  background-color: transparent;
+}
+
+.btn:hover {
+  background-color: rgba(78, 78, 82, 0.3);
+}
+
+.btn:active {
+  background-color: rgba(78, 85, 92, 0.3);
+  outline: none;
 }

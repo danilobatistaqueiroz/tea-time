@@ -55,3 +55,7 @@
   border: var(--border-active-color);
   outline: none;
 }
+
+.cancel {
+  margin-left:5px;
+}
