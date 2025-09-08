@@ -76,13 +76,17 @@
   }
 }
 @media (min-height: 801px) {
+  h1 {
+    margin-top: var(--medium-margin);
+    margin-bottom: var(--medium-margin);
+  }
   .logo {
     max-width:var(--cup-size-big);
     max-height:var(--cup-size-big);
   }
 }
 .item {
-  padding-bottom: var(--big-padding);
+  padding-bottom: var(--medium-padding);
   width: 100%;
 }
 .logo {
