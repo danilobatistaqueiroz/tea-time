@@ -1,4 +1,4 @@
-# React + Vite
+# TEA TIME
 
 created using the template found in: https://vite.dev/guide/  
 link to stackblitz and downloaded:  
